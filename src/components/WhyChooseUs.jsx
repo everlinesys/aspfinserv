@@ -50,7 +50,7 @@ export default function WhyChooseUs() {
       {/* Section Typography Intro */}
       <div className="max-w-7xl mx-auto px-6 mb-20 text-center relative z-10">
         <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium">
-          Why Choose ASP FinServ
+          Why Choose ASP Financial Services
         </span>
 
         <h2 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">

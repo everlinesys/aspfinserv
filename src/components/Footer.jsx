@@ -16,7 +16,7 @@ export default function Footer() {
                 A
               </div>
               <span className="text-white text-xl font-bold tracking-tight group-hover:text-emerald-400 transition-colors">
-                ASP<span className="text-amber-400 font-light">FINSERV</span>
+                ASP<span className="text-amber-400 font-light">Financial Services</span>
               </span>
             </a>
 
@@ -66,7 +66,7 @@ export default function Footer() {
               Contact
             </h3>
             <div className="space-y-3 text-sm text-zinc-400 leading-relaxed">
-              <p className="hover:text-white transition-colors cursor-pointer">info@aspfinserv.com</p>
+              <p className="hover:text-white transition-colors cursor-pointer">info@ASP Financial Services.com</p>
               <p className="hover:text-white transition-colors cursor-pointer">+91 98765 43210</p>
               <p>
                 Kochi, Kerala
@@ -96,7 +96,7 @@ export default function Footer() {
         {/* Bottom Legal Disclaimers Row */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-zinc-500 tracking-wide">
           <p>
-            © {new Date().getFullYear()} ASP FinServ. All Rights Reserved.
+            © {new Date().getFullYear()} ASP Financial Services. All Rights Reserved.
           </p>
 
           <div className="flex flex-wrap justify-center gap-6">
