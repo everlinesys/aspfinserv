@@ -40,7 +40,7 @@ export default function Header() {
               A
             </div>
             <span className="text-white text-xl font-bold tracking-tight group-hover:text-emerald-400 transition-colors">
-              ASP<span className="text-amber-400 font-light">Financial Services</span> TRIAL VERSION
+              ASP<span className="text-amber-400 font-light">Financial Services</span>
             </span>
           </a>
 
