@@ -10,7 +10,7 @@ export default function Trust() {
     {
       icon: "/sebi.png",
       value: "SEBI",
-      label: "Registered\nAdvisory Services",
+      label: "Regulated\nAdvisory Services",
       isPrimary: true, // Highlights regulatory alignment
     },
     {
@@ -27,7 +27,7 @@ export default function Trust() {
     },
     {
       icon: "/users.png",
-      value: "100K+",
+      value: "25K+",
       label: "Investor\nCommunity",
       isPrimary: false,
     },

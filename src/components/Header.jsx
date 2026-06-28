@@ -91,9 +91,9 @@ export default function Header() {
       </div>
 
       {/* Mobile Drawer Slide-out */}
-      <div className={`lg:hidden fixed inset-0 top-[110px] bg-zinc-950/95 backdrop-blur-lg transform transition-transform duration-300 ease-in-out z-40 ${mobileOpen ? "translate-x-0" : "translate-x-full"
+      <div className={`lg:hidden fixed inset-0 top-[110px] bg-zinc-950/95 transform transition-transform duration-300 ease-in-out z-90 ${mobileOpen ? "translate-x-0" : "translate-x-full"
         }`}>
-        <nav className="flex flex-col p-6 gap-6 text-lg border-t border-white/5">
+        <nav className="flex flex-col p-6 gap-6 text-lg border-t border-white/5 bg-zinc-950/95 backdrop-blur-md h-full">
           <a href="/" onClick={() => setMobileOpen(false)} className="text-emerald-400 font-medium">Home</a>
           {["Services", "Investment Plans", "SIP Calculator", "About Us", "Contact"].map((item) => (
             <a

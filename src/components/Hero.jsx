@@ -127,9 +127,9 @@ export default function Hero() {
                   Akash S
                 </h3>
 
-                <p className="text-emerald-400 text-sm">
+                {/* <p className="text-emerald-400 text-sm">
                   Financial Advisor
-                </p>
+                </p> */}
               </div>
 
               {/* Trust Badge */}
@@ -145,11 +145,11 @@ export default function Hero() {
               data-aos-delay="500"
               className="absolute -bottom-6 -right-6 bg-amber-400 text-zinc-950 px-6 py-4 rounded-2xl shadow-2xl border border-amber-300/30"
             >
-              <p className="text-xs font-bold uppercase tracking-wider text-zinc-800">
-                Avg. Annual Growth
+              <p className="text-xl font-bold uppercase tracking-wider text-zinc-800">
+                Global NRI/NHI
               </p>
-              <h3 className="text-3xl font-black tracking-tight mt-0.5">
-                +18.5%
+              <h3 className="text-xl font-black tracking-tight mt-0.5">
+                Wealth Advisory
               </h3>
             </div>
           </div>
