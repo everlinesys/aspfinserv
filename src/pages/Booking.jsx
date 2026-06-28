@@ -21,7 +21,7 @@ export default function Booking() {
             return;
         }
 
-        const phoneNumber = "919876543210"; // Replace with your verified company phone number
+        const phoneNumber = "919847729426"; // Replace with your verified company phone number
         const message = `Hello Akash S, I would like to book a strategic Consultation slot.
     
 • Session Type: ${sessionType}

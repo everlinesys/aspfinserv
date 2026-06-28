@@ -49,7 +49,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs text-zinc-500 font-mono">Secure Email</p>
-                  <a href="mailto:advisory@akashs.com" className="text-sm md:text-base text-zinc-200 hover:text-emerald-400 font-medium transition-colors">advisory@akashs.com</a>
+                  <a href="mailto:aspfinancialservices6@gmail.com" className="text-sm md:text-base text-zinc-200 hover:text-emerald-400 font-medium transition-colors">aspfinancialservices6@gmail.com</a>
                 </div>
               </div>
 
@@ -59,7 +59,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs text-zinc-500 font-mono">Priority Desk</p>
-                  <a href="tel:+919876543210" className="text-sm md:text-base text-zinc-200 hover:text-emerald-400 font-medium transition-colors">+91 98765 43210</a>
+                  <a href="tel:+919847729426" className="text-sm md:text-base text-zinc-200 hover:text-emerald-400 font-medium transition-colors">+91 98477 29426</a>
                 </div>
               </div>
 
