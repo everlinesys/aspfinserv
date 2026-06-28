@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-emerald-500/5 blur-[160px] pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 translate-x-1/2 h-[500px] w-[500px] rounded-full bg-amber-500/5 blur-[140px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-28 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-16 pt-20 pb-28 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Left Content Column */}
