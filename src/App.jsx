@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import SIPCalculator from "./pages/SIPCalculator";
 import Booking from "./pages/Booking";
 import ScrollToTop from "./components/ScrollToTop";
+import Disclaimer from "./components/Disclaimer";
 function App() {
   return (
     <BrowserRouter>
@@ -27,6 +28,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/book-consultation" element={<Booking />} />
       </Routes>
+      <Disclaimer />
       <Footer />
     </BrowserRouter>
   );

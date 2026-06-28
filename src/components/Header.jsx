@@ -32,10 +32,12 @@ export default function Header() {
         <div className="flex items-center gap-12 whitespace-nowrap py-2 animate-marquee">
           <span>✦ Wealth Creation Starts Here</span>
           <span>✦ Trusted Financial Advisory</span>
-          <span>✦ Tax Planning & Investments</span>
+          <span>✦ Walk the Path to Financial Freedom</span>
           <span>✦ Build Long-Term Financial Security</span>
           <span>✦ Wealth Creation Starts Here</span>
-          <span>✦ Trusted Financial Advisory</span>
+          <span>✦ Walk Towards Your Dream Home</span>
+          <span>✦ Plan Your Children's Education</span>
+          <span>✦ Plan Your Children's Marriage</span>
         </div>
       </div>
 

@@ -60,9 +60,9 @@ export default function Hero() {
 
               <button 
                 className="border border-white/10 bg-white/5 backdrop-blur-sm px-8 py-4 rounded-2xl text-zinc-300 hover:text-white hover:bg-white/10 transition"
-                onClick={() => navigate('/book-consultation')}
+                onClick={() => navigate('/services')}
               >
-                Learn More
+                Services
               </button>
             </div>
 
