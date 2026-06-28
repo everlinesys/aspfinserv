@@ -19,7 +19,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-sm font-medium text-emerald-400 mb-8"
             >
               <TrendingUp size={16} />
-              Trusted Financial Advisory Services
+              Your Trusted Mutual Fund Partner
             </div>
 
             <h1
@@ -80,14 +80,14 @@ export default function Hero() {
               </div>
 
               <div>
-                <h3 className="text-3xl md:text-4xl font-bold text-amber-400 tracking-tight">₹100Cr+</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-amber-400 tracking-tight">100+</h3>
                 <p className="text-xs md:text-sm text-zinc-500 font-medium uppercase tracking-wider mt-1">
-                  Assets Guided
+                  Countries Served
                 </p>
               </div>
 
               <div>
-                <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight">15+</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight">5+</h3>
                 <p className="text-xs md:text-sm text-zinc-500 font-medium uppercase tracking-wider mt-1">
                   Years Experience
                 </p>
@@ -111,7 +111,7 @@ export default function Hero() {
                 <img
                   src="/founder.jpeg"
                   alt="Founder"
-                  className="w-full h-[650px] object-cover object-top"
+                  className="w-full h-[350px] md:h-[650px] object-cover object-top"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
