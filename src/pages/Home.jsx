@@ -9,6 +9,8 @@ import Footer from '../components/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import Reviews from '../components/Reviews';
+import Process from '../components/Process';
 
 // Inside your main App component:
 
@@ -22,13 +24,14 @@ export default function Home() {
   }, []);
   return (
     <>
-      <Header />
+
       <Hero />
       <Trust />
+      <Reviews />
+      <Process />
       <MissionVision />
       <WhyChooseUs />
       <CTA />
-      <Footer />
     </>
   )
 }

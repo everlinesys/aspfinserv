@@ -1,7 +1,8 @@
 import { ArrowRight, TrendingUp, ShieldCheck, Briefcase } from "lucide-react";
 import MockChart from "./MockChart";
-
+import { useNavigate } from "react-router-dom";
 export default function Hero() {
+  const navigate = useNavigate();
   return (
     <section className="relative overflow-hidden bg-zinc-950 text-white pt-24">
       {/* Background Ambient Glows */}
@@ -46,7 +47,10 @@ export default function Hero() {
               data-aos-delay="300"
               className="mt-10 flex flex-wrap gap-4"
             >
-              <button className="group bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-medium px-8 py-4 rounded-2xl flex items-center gap-2 shadow-lg shadow-emerald-950/40 hover:-translate-y-0.5 transition active:translate-y-0">
+              <button 
+                className="group bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-medium px-8 py-4 rounded-2xl flex items-center gap-2 shadow-lg shadow-emerald-950/40 hover:-translate-y-0.5 transition active:translate-y-0"
+                onClick={() => navigate('/contact')}
+              >
                 Get Started
                 <ArrowRight
                   size={18}
@@ -54,7 +58,10 @@ export default function Hero() {
                 />
               </button>
 
-              <button className="border border-white/10 bg-white/5 backdrop-blur-sm px-8 py-4 rounded-2xl text-zinc-300 hover:text-white hover:bg-white/10 transition">
+              <button 
+                className="border border-white/10 bg-white/5 backdrop-blur-sm px-8 py-4 rounded-2xl text-zinc-300 hover:text-white hover:bg-white/10 transition"
+                onClick={() => navigate('/book-consultation')}
+              >
                 Learn More
               </button>
             </div>
@@ -94,13 +101,49 @@ export default function Hero() {
             data-aos-delay="200"
             className="relative lg:mt-0 mt-12"
           >
-            <MockChart />
+            <div className="relative w-full max-w-lg mx-auto">
+
+              {/* Glow */}
+              <div className="absolute inset-0 bg-emerald-500/10 blur-3xl rounded-full" />
+
+              {/* Founder */}
+              <div className="relative rounded-[32px] overflow-hidden border border-white/10 bg-zinc-900 shadow-2xl">
+                <img
+                  src="/founder.jpeg"
+                  alt="Founder"
+                  className="w-full h-[650px] object-cover object-top"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
+              </div>
+
+              {/* Floating Card */}
+              <div className="absolute bottom-8 -left-8 bg-zinc-900 border border-white/10 rounded-2xl p-5 backdrop-blur-xl shadow-2xl">
+                <p className="text-xs uppercase tracking-wider text-zinc-500">
+                  Founder
+                </p>
+
+                <h3 className="text-xl font-bold mt-1">
+                  Akash S
+                </h3>
+
+                <p className="text-emerald-400 text-sm">
+                  Financial Advisor
+                </p>
+              </div>
+
+              {/* Trust Badge */}
+              {/* <div className="absolute top-10 -right-6 bg-emerald-500 text-black rounded-xl px-5 py-3 font-semibold shadow-xl">
+                Trusted by 500+ Investors
+              </div> */}
+
+            </div>
 
             {/* Overlapping Absolute Metrics Tag */}
             <div
               data-aos="zoom-in"
               data-aos-delay="500"
-              className="absolute -bottom-6 -left-6 bg-amber-400 text-zinc-950 px-6 py-4 rounded-2xl shadow-2xl border border-amber-300/30"
+              className="absolute -bottom-6 -right-6 bg-amber-400 text-zinc-950 px-6 py-4 rounded-2xl shadow-2xl border border-amber-300/30"
             >
               <p className="text-xs font-bold uppercase tracking-wider text-zinc-800">
                 Avg. Annual Growth
@@ -113,6 +156,7 @@ export default function Hero() {
 
         </div>
       </div>
+      <MockChart />
     </section>
   );
 }

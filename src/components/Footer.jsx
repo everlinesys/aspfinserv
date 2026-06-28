@@ -12,8 +12,8 @@ export default function Footer() {
           {/* Logo & About */}
           <div className="flex flex-col">
             <a href="#" className="flex items-center gap-2 group w-max">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-600 to-amber-400 flex items-center justify-center font-black text-black text-sm">
-                A
+              <div className="w-12 h-12 rounded-lg  to-amber-400 flex items-center justify-center font-black text-black text-sm">
+                <img src="/logo.png" alt="ASP Financial Services Logo" className="w-12 h-12" />
               </div>
               <span className="text-white text-xl font-bold tracking-tight group-hover:text-emerald-400 transition-colors">
                 ASP<span className="text-amber-400 font-light">Financial Services</span>

@@ -1,12 +1,13 @@
 import { ArrowRight } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
 export default function CTA() {
+  const navigate = useNavigate();
   return (
     <section className="bg-zinc-950 py-24 relative overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
         {/* Main Card Shell */}
         <div className="relative overflow-hidden rounded-[40px] border border-white/5 bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 p-12 md:p-20 shadow-2xl shadow-black">
-          
+
           {/* Layered Accent Glows */}
           <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-emerald-500/[0.07] blur-[130px] pointer-events-none" />
           <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-amber-500/[0.03] blur-[130px] pointer-events-none" />
@@ -30,7 +31,10 @@ export default function CTA() {
 
             {/* Interactive Action Hub */}
             <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <button className="group bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-medium px-8 py-4 rounded-2xl flex items-center gap-2 shadow-xl shadow-emerald-950/50 hover:-translate-y-0.5 transition active:translate-y-0">
+              <button
+                className="group bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-medium px-8 py-4 rounded-2xl flex items-center gap-2 shadow-xl shadow-emerald-950/50 hover:-translate-y-0.5 transition active:translate-y-0"
+                onClick={() => navigate('/book-consultation')}
+              >
                 Schedule Consultation
                 <ArrowRight
                   size={18}
@@ -38,7 +42,10 @@ export default function CTA() {
                 />
               </button>
 
-              <button className="border border-white/10 bg-white/5 text-zinc-300 hover:text-white px-8 py-4 rounded-2xl hover:bg-white/10 transition">
+              <button
+                className="border border-white/10 bg-white/5 text-zinc-300 hover:text-white px-8 py-4 rounded-2xl hover:bg-white/10 transition"
+                onClick={() => navigate('/contact')}
+              >
                 Contact Us
               </button>
             </div>

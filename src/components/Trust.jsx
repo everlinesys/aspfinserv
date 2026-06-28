@@ -8,25 +8,25 @@ import {
 export default function Trust() {
   const stats = [
     {
-      icon: BadgeCheck,
+      icon: "/sebi.png",
       value: "SEBI",
       label: "Registered\nAdvisory Services",
       isPrimary: true, // Highlights regulatory alignment
     },
     {
-      icon: IndianRupee,
-      value: "₹25Cr+",
-      label: "Assets\nManaged",
+      icon: "/amfi.png",
+      value: "AMFI",
+      label: "Registered ",
       isPrimary: false,
     },
     {
-      icon: Star,
-      value: "2500+",
-      label: "Satisfied\nClients",
+      icon: "/irdai.png",
+      value: "IRDI",
+      label: "Licensed",
       isPrimary: false,
     },
     {
-      icon: Users,
+      icon: "/users.png",
       value: "100K+",
       label: "Investor\nCommunity",
       isPrimary: false,
@@ -75,7 +75,7 @@ export default function Trust() {
                   ? "bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-500/20" 
                   : "bg-zinc-900 border border-white/10 text-zinc-300 group-hover:text-amber-400 group-hover:border-amber-400/30"
               }`}>
-                <item.icon size={26} />
+                <img src={item.icon} alt={`${item.value} Icon`} className="w-12 h-12" />
               </div>
 
               {/* Metric Figure */}

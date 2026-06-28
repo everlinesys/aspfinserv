@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 export default function MockChart() {
   // --- State Variables ---
   const [currentAge, setCurrentAge] = useState(30);
   const [retirementAge, setRetirementAge] = useState(60);
   const [monthlyInvestment, setMonthlyInvestment] = useState(15000);
   const [expectedReturn, setExpectedReturn] = useState(12);
-
+  const navigate = useNavigate();
   // --- Financial Calculations ---
   const investmentYears = Math.max(1, retirementAge - currentAge);
   const totalMonths = investmentYears * 12;
@@ -74,7 +74,7 @@ export default function MockChart() {
     if (chartData.length === 0) return { linePath: '', areaPath: '', lastX: 0, lastY: 0 };
 
     const maxVal = estimatedWealth || 1;
-    
+
     // Map points to SVG canvas space
     const coords = chartData.map((d, index) => {
       const x = paddingX + (index / (chartData.length - 1)) * (width - paddingX * 2);
@@ -105,7 +105,7 @@ export default function MockChart() {
 
   return (
     <div className="w-full max-w-4xl mx-auto p-6 md:p-8 bg-zinc-950 text-white rounded-[32px] border border-white/10 shadow-2xl backdrop-blur-xl">
-      
+
       {/* 4. Premium Top Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-white/5 pb-6 mb-8 gap-4">
         <div>
@@ -127,10 +127,10 @@ export default function MockChart() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        
+
         {/* 5. Interactive Sliders Section */}
         <div className="lg:col-span-5 space-y-6">
-          
+
           {/* Current Age Slider */}
           <div className="space-y-2">
             <div className="flex justify-between items-center text-sm">
@@ -312,15 +312,16 @@ export default function MockChart() {
       </div>
 
       {/* 7. Bottom Call To Action Button */}
-      <button 
+      <button
         type="button"
+        onClick={() => navigate("/sip-calculator")}
         className="w-full mt-6 py-3.5 px-4 bg-zinc-900 border border-white/10 hover:border-[#C6A15B]/40 text-sm font-medium tracking-wide text-zinc-200 hover:text-white rounded-xl transition-all duration-300 shadow-lg flex items-center justify-center gap-2 group hover:bg-zinc-800/80"
       >
         Open Advanced Financial Planner
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 20 20" 
-          fill="currentColor" 
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
           className="w-4 h-4 text-zinc-400 group-hover:text-white transition-transform duration-300 group-hover:translate-x-0.5"
         >
           <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
