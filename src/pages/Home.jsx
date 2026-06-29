@@ -11,6 +11,7 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import Reviews from '../components/Reviews';
 import Process from '../components/Process';
+import MutualFundPartners from '../components/MutualFundPartners';
 
 // Inside your main App component:
 
@@ -28,6 +29,7 @@ export default function Home() {
       <Hero />
       <Trust />
       <Reviews />
+      <MutualFundPartners />
       <Process />
       <MissionVision />
       <WhyChooseUs />
