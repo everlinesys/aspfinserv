@@ -162,7 +162,7 @@ export default function MockChart() {
               <span className="text-zinc-200 font-semibold">{formatCurrency(monthlyInvestment)}</span>
             </div>
             <input
-              type="range" min="1000" max="100000" step="1000" value={monthlyInvestment}
+              type="range" min="10000" max="100000" step="1000" value={monthlyInvestment}
               onChange={(e) => setMonthlyInvestment(Number(e.target.value))}
               className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[#C6A15B]"
             />

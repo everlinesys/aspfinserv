@@ -4,13 +4,14 @@ import {
   Star,
   Users,
 } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
 export default function Trust() {
+  const navigate = useNavigate();
   const stats = [
     {
       icon: "/sebi.png",
       value: "SEBI",
-      label: "Regulated\nAdvisory Services",
+      label: "Regulated Services",
       isPrimary: true, // Highlights regulatory alignment
     },
     {
@@ -95,7 +96,7 @@ export default function Trust() {
 
         {/* Action Button CTA */}
         <div className="flex justify-center mt-16">
-          <button className="group relative px-10 py-4 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-medium text-base shadow-xl shadow-emerald-950/40 hover:-translate-y-0.5 transition active:translate-y-0">
+          <button onClick={() => navigate("/contact")} className="group relative px-10 py-4 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-medium text-base shadow-xl shadow-emerald-950/40 hover:-translate-y-0.5 transition active:translate-y-0">
             Start Your Financial Journey
           </button>
         </div>

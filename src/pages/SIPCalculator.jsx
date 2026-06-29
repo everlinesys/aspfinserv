@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Calculator, Wallet, Percent, CalendarDays, ArrowUpRight } from "lucide-react";
+import { Calculator, Wallet, Percent, CalendarDays, ArrowUpRight, Coins, Landmark } from "lucide-react";
 
 export default function SipCalculator() {
   // State variables for the inputs
@@ -12,27 +12,40 @@ export default function SipCalculator() {
   const [estimatedReturns, setEstimatedReturns] = useState(0);
   const [totalValue, setTotalValue] = useState(0);
 
-  // SIP Formula implementation:
-  // M = P * [ ({1 + i}^n - 1) / i ] * (1 + i)
+  // Alternative asset comparative states
+  const [goldValue, setGoldValue] = useState(0);
+  const [bankValue, setBankValue] = useState(0);
+
+  // Fixed historic benchmark growth values
+  const GOLD_RATE = 8;
+  const BANK_RATE = 6;
+
+  // SIP Future Value helper formula
+  const calculateSIP = (P, annualRate, years) => {
+    const i = annualRate / 12 / 100;
+    const n = years * 12;
+    if (i === 0) return P * n;
+    return P * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
+  };
+
   useEffect(() => {
     const P = monthlyInvestment;
-    const i = expectedReturn / 12 / 100; // Monthly interest rate
-    const n = timePeriod * 12; // Total number of months
-
+    const n = timePeriod * 12;
     const calculatedInvested = P * n;
-    
-    let calculatedTotal = 0;
-    if (i === 0) {
-      calculatedTotal = calculatedInvested;
-    } else {
-      calculatedTotal = P * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
-    }
 
-    const calculatedReturns = calculatedTotal - calculatedInvested;
+    // Main SIP calculations
+    const mainTotal = calculateSIP(P, expectedReturn, timePeriod);
+    const mainReturns = mainTotal - calculatedInvested;
+
+    // Alternative asset benchmark computations
+    const calculatedGold = calculateSIP(P, GOLD_RATE, timePeriod);
+    const calculatedBank = calculateSIP(P, BANK_RATE, timePeriod);
 
     setTotalInvested(Math.round(calculatedInvested));
-    setEstimatedReturns(Math.round(calculatedReturns));
-    setTotalValue(Math.round(calculatedTotal));
+    setEstimatedReturns(Math.round(mainReturns));
+    setTotalValue(Math.round(mainTotal));
+    setGoldValue(Math.round(calculatedGold));
+    setBankValue(Math.round(calculatedBank));
   }, [monthlyInvestment, expectedReturn, timePeriod]);
 
   // Helper function to format Indian currency style values cleanly
@@ -92,7 +105,7 @@ export default function SipCalculator() {
               </div>
               <input 
                 type="range" 
-                min="500" 
+                min="5000" 
                 max="500000" 
                 step="500"
                 value={monthlyInvestment}
@@ -100,7 +113,7 @@ export default function SipCalculator() {
                 className="w-full accent-emerald-500 bg-zinc-800 h-1.5 rounded-lg appearance-none cursor-pointer"
               />
               <div className="flex justify-between text-[11px] font-mono text-zinc-600">
-                <span>₹500</span>
+                <span>₹5000</span>
                 <span>₹5,00,000</span>
               </div>
             </div>
@@ -226,6 +239,52 @@ export default function SipCalculator() {
             </div>
           </div>
 
+        </div>
+
+        {/* Opportunity Cost Benchmarks Row */}
+        <div className="max-w-5xl mx-auto w-full mt-12 pt-8 border-t border-white/5" data-aos="fade-up">
+          <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-500 block mb-4">// Alternative Capital Asset Opportunity Benchmarks</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            {/* Gold Alternative Row Container */}
+            <div className="flex items-center justify-between p-5 rounded-2xl border border-white/5 bg-zinc-900/10 backdrop-blur-sm">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shadow-md">
+                  <Coins className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-zinc-300">Physical Gold Allocation</p>
+                  <p className="text-xs font-mono text-zinc-500">Historic Average Yield: {GOLD_RATE}% p.a.</p>
+                </div>
+              </div>
+              <div className="text-right">
+                <p className="text-base font-semibold text-zinc-200">{formatCurrency(goldValue)}</p>
+                <p className="text-[11px] font-mono text-zinc-500 mt-0.5">
+                  Gap: -{formatCurrency(Math.max(0, totalValue - goldValue))}
+                </p>
+              </div>
+            </div>
+
+            {/* Bank Alternative Row Container */}
+            <div className="flex items-center justify-between p-5 rounded-2xl border border-white/5 bg-zinc-900/10 backdrop-blur-sm">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-zinc-800 border border-white/5 flex items-center justify-center text-zinc-400 shadow-md">
+                  <Landmark className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-zinc-300">Bank Fixed Deposits</p>
+                  <p className="text-xs font-mono text-zinc-500">Historic Average Yield: {BANK_RATE}% p.a.</p>
+                </div>
+              </div>
+              <div className="text-right">
+                <p className="text-base font-semibold text-zinc-200">{formatCurrency(bankValue)}</p>
+                <p className="text-[11px] font-mono text-zinc-500 mt-0.5">
+                  Gap: -{formatCurrency(Math.max(0, totalValue - bankValue))}
+                </p>
+              </div>
+            </div>
+
+          </div>
         </div>
 
       </div>

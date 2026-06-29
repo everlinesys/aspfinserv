@@ -68,7 +68,7 @@ export default function Contact() {
                   <MessageSquare className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-zinc-500 font-mono">Insya Community Support</p>
+                  <p className="text-xs text-zinc-500 font-mono">ASP FinEd Community Support</p>
                   <span className="text-sm text-zinc-300 font-light">Exclusive member portal access</span>
                 </div>
               </div>
@@ -77,16 +77,16 @@ export default function Contact() {
             {/* Note Scan / Visual Framework Attachment Card */}
             <div className="relative rounded-2xl border border-white/5 bg-zinc-900/40 p-5 overflow-hidden group">
               <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-3">// Structured Assessment Framework</p>
-              <div className="relative h-48 rounded-xl overflow-hidden bg-zinc-950 border border-white/5 flex items-center justify-center">
+              <div className="relative h-48  rounded-xl overflow-hidden bg-zinc-950 border border-white/5 flex items-center justify-center">
                 {/* Referencing image_0753c4.jpg exactly per instructions */}
                 <img 
-                  src="image_0753c4.jpg" 
+                  src="/logo.png" 
                   alt="Annual Financial Review Assessment Matrix" 
                   className="w-full h-full object-cover grayscale opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
                 <span className="absolute bottom-3 left-3 text-[11px] font-mono text-zinc-400 bg-zinc-900/80 px-2 py-1 rounded border border-white/5 backdrop-blur-sm flex items-center gap-1">
-                  <Globe className="w-3 h-3 text-amber-400" /> Model Map Ref: image_0753c4.jpg
+                  <Globe className="w-3 h-3 text-amber-400" /> Model Map Ref: #0753c4
                 </span>
               </div>
               <p className="mt-3 text-xs text-zinc-500 font-light leading-relaxed">

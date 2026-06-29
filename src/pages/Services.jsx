@@ -13,8 +13,9 @@ import {
   Lock
 } from "lucide-react";
 import CTA from "../components/CTA";
-
+import {useNavigate} from "react-router-dom";
 export default function Services() {
+  const navigate = useNavigate();
   const fullAdvisory = [
     { icon: Compass, text: "Financial clarity session – current position & behavior deep-dive" },
     { icon: LineChart, text: "Detailed Goal-Based plan with inflation-adjusted projections" },
@@ -105,7 +106,7 @@ export default function Services() {
               </div>
 
               <div className="mt-10">
-                <button className="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-zinc-950 font-bold text-sm tracking-wide shadow-lg shadow-emerald-950/20 transition active:scale-[0.99]">
+                <button onClick={() => navigate("/contact")} className="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-zinc-950 font-bold text-sm tracking-wide shadow-lg shadow-emerald-950/20 transition active:scale-[0.99]">
                   Enroll In Full Advisory
                 </button>
               </div>
@@ -160,7 +161,7 @@ export default function Services() {
                   This option is exclusively available for existing clients
                 </div>
 
-                <button className="w-full mt-4 py-4 rounded-xl bg-zinc-900 hover:bg-zinc-850 text-zinc-200 border border-white/10 hover:border-white/20 font-semibold text-sm tracking-wide transition active:scale-[0.99]">
+                <button onClick={() => navigate("/contact")} className="w-full mt-4 py-4 rounded-xl bg-zinc-900 hover:bg-zinc-850 text-zinc-200 border border-white/10 hover:border-white/20 font-semibold text-sm tracking-wide transition active:scale-[0.99]">
                   Request Assessment
                 </button>
               </div>

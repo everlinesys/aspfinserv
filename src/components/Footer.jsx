@@ -67,7 +67,7 @@ export default function Footer() {
             </h3>
             <div className="space-y-3 text-sm text-zinc-400 leading-relaxed">
               <p className="hover:text-white transition-colors cursor-pointer">info@ASP Financial Services.com</p>
-              <p className="hover:text-white transition-colors cursor-pointer">+91 98765 43210</p>
+              <p className="hover:text-white transition-colors cursor-pointer">+91 98477 29426</p>
               <p>
                 Kochi, Kerala
                 <span className="block text-xs text-zinc-500 mt-0.5">India</span>

@@ -31,13 +31,13 @@ export default function Header() {
       <div className="bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-neutral-950 overflow-hidden text-xs md:text-sm tracking-wider font-semibold uppercase">
         <div className="flex items-center gap-12 whitespace-nowrap py-2 animate-marquee">
           <span>✦ Wealth Creation Starts Here</span>
-          <span>✦ Trusted Financial Advisory</span>
           <span>✦ Walk the Path to Financial Freedom</span>
           <span>✦ Build Long-Term Financial Security</span>
-          <span>✦ Wealth Creation Starts Here</span>
+          <span>✦ Plan Your Retirement</span>
           <span>✦ Walk Towards Your Dream Home</span>
           <span>✦ Plan Your Children's Education</span>
           <span>✦ Plan Your Children's Marriage</span>
+          <span>✦ Trusted Mutual Fund Consultant</span>
         </div>
       </div>
 
