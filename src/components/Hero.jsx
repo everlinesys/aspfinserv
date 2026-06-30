@@ -40,7 +40,7 @@ export default function Hero() {
               data-aos-delay="200"
               className="mt-4 text-sm md:text-base text-zinc-400 max-w-lg leading-relaxed font-light"
             >
-              Strategic financial planning, investment guidance, tax optimization, and business advisory services designed to help individuals and organizations build long-term wealth.
+              Strategic financial planning for investments, health insurance, and tax optimization—helping individuals, families, and businesses worldwide build, protect, and preserve long-term wealth.
             </p>
 
             <div
@@ -48,7 +48,7 @@ export default function Hero() {
               data-aos-delay="300"
               className="mt-6 flex flex-wrap gap-3"
             >
-              <button 
+              <button
                 className="group bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white text-sm font-medium px-6 py-3 rounded-xl flex items-center gap-2 shadow-md shadow-emerald-950/40 hover:-translate-y-0.5 transition active:translate-y-0"
                 onClick={() => navigate('/contact')}
               >
@@ -56,7 +56,7 @@ export default function Hero() {
                 <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
               </button>
 
-              <button 
+              <button
                 className="border border-white/10 bg-white/5 text-sm px-6 py-3 rounded-xl text-zinc-300 hover:text-white hover:bg-white/10 transition"
                 onClick={() => navigate('/services')}
               >
@@ -71,7 +71,7 @@ export default function Hero() {
               className="mt-10 grid grid-cols-3 gap-4 border-t border-white/5 pt-6 w-full max-w-md"
             >
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">500+</h3>
+                <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">1500+</h3>
                 <p className="text-[10px] md:text-xs text-zinc-500 font-medium uppercase tracking-wider mt-0.5">
                   Clients Advised
                 </p>
@@ -106,9 +106,9 @@ export default function Hero() {
               {/* Founder Profile Container */}
               <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 shadow-xl">
                 <img
-                  src="/founder.jpeg"
+                  src="/founder2.jpg"
                   alt="Founder"
-                  className="w-full h-[280px] md:h-[450px] object-cover object-top"
+                  className="w-full h-[320px] md:h-[450px] object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/10 to-transparent" />
               </div>
@@ -127,7 +127,7 @@ export default function Hero() {
                 className="absolute -bottom-4 -right-4 bg-amber-400 text-zinc-950 px-4 py-3 rounded-xl shadow-xl border border-amber-300/30 text-right"
               >
                 <p className="text-[10px] font-bold uppercase tracking-wider text-zinc-800 leading-none">
-                  Global NRI/NHI
+                  Global NRI/HNI
                 </p>
                 <h3 className="text-sm font-black tracking-tight mt-1 leading-none">
                   Wealth Advisory

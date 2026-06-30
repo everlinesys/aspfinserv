@@ -8,7 +8,7 @@ export default function MissionVision() {
       <div className="absolute top-1/2 right-0 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-amber-500/[0.02] blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         {/* Section Heading */}
         <div className="text-center mb-20">
           <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium">
@@ -29,7 +29,7 @@ export default function MissionVision() {
 
         {/* Dynamic Concept Cards */}
         <div className="grid lg:grid-cols-2 gap-8">
-          
+
           {/* Mission Card */}
           <div className="group relative overflow-hidden rounded-[32px] border border-white/5 bg-zinc-900/20 backdrop-blur-md p-10 hover:border-emerald-500/30 transition-all duration-300 hover:scale-[1.01]">
             {/* Visual Icon Box */}
@@ -42,7 +42,7 @@ export default function MissionVision() {
             </h3>
 
             <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
-              To empower individuals, families, entrepreneurs, and businesses with reliable financial guidance that creates sustainable wealth, protects physical and digital assets, and inspires absolute confidence in every stage of life.
+              Our mission is to deliver personalized financial planning solutions that help individuals, families, and organizations achieve their financial goals through smart investments, comprehensive health insurance, tax-efficient strategies, and long-term wealth management.
             </p>
 
             {/* Corner Ambient Radial */}

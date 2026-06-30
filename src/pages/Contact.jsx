@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import { Mail, Phone, Globe, MessageSquare, ArrowUpRight, Send, CheckCircle } from "lucide-react";
+import { Mail, Phone, Globe, MessageSquare, Send, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function Contact() {
   const [formState, setFormState] = useState({ name: "", email: "", phone: "", clientType: "nri", message: "" });
+  const [minInvestConfirmed, setMinInvestConfirmed] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!minInvestConfirmed) return;
+
     // Handle secure form distribution logic here
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 5000);
@@ -19,7 +22,7 @@ export default function Contact() {
       <div className="absolute bottom-0 left-0 h-[600px] w-[500px] rounded-full bg-amber-500/[0.02] blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         {/* Section Title */}
         <div className="max-w-3xl mb-20" data-aos="fade-up">
           <span className="inline-block mb-4 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-sm font-medium text-emerald-400">
@@ -29,20 +32,24 @@ export default function Contact() {
             Initiate Your Financial Blueprint Today.
           </h2>
           <p className="mt-4 text-zinc-400 text-lg font-light leading-relaxed">
-            Whether you are local or overseas, let's map out your assets with structural clarity and absolute transparency.
+            Whether you are local or overseas, let's map out your assets with structural clarity.
+            <span className="block mt-2 text-amber-400/90 font-medium text-base flex items-center gap-2">
+              <AlertCircle size={18} className="shrink-0" />
+              Please note: We only initiate advisory setups for clients willing to invest a minimum of 10K.
+            </span>
           </p>
         </div>
 
         {/* Main Split Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          
+
           {/* Left Side: Touchpoints & Document Asset Reference */}
           <div className="lg:col-span-5 space-y-10" data-aos="fade-right">
-            
+
             {/* Quick Touchpoint Channels */}
             <div className="space-y-6">
               <h3 className="text-sm font-mono uppercase tracking-widest text-zinc-500">// Direct Channels</h3>
-              
+
               <div className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-zinc-900/20 backdrop-blur-md">
                 <div className="w-10 h-10 rounded-lg bg-zinc-950 border border-white/10 flex items-center justify-center text-emerald-400">
                   <Mail className="w-5 h-5" />
@@ -62,6 +69,15 @@ export default function Contact() {
                   <a href="tel:+919847729426" className="text-sm md:text-base text-zinc-200 hover:text-emerald-400 font-medium transition-colors">+91 98477 29426</a>
                 </div>
               </div>
+              <div className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-zinc-900/20 backdrop-blur-md">
+                <div className="w-10 h-10 rounded-lg bg-zinc-950 border border-white/10 flex items-center justify-center text-emerald-400">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xs text-zinc-500 font-mono">Health Insurance Services</p>
+                  <a href="tel:+919400889426" className="text-sm md:text-base text-zinc-200 hover:text-emerald-400 font-medium transition-colors">+91 94008 89426</a>
+                </div>
+              </div>
 
               <div className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-zinc-900/20 backdrop-blur-md">
                 <div className="w-10 h-10 rounded-lg bg-zinc-950 border border-white/10 flex items-center justify-center text-emerald-400">
@@ -77,11 +93,10 @@ export default function Contact() {
             {/* Note Scan / Visual Framework Attachment Card */}
             <div className="relative rounded-2xl border border-white/5 bg-zinc-900/40 p-5 overflow-hidden group">
               <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-3">// Structured Assessment Framework</p>
-              <div className="relative h-48  rounded-xl overflow-hidden bg-zinc-950 border border-white/5 flex items-center justify-center">
-                {/* Referencing image_0753c4.jpg exactly per instructions */}
-                <img 
-                  src="/logo.png" 
-                  alt="Annual Financial Review Assessment Matrix" 
+              <div className="relative h-48 rounded-xl overflow-hidden bg-zinc-950 border border-white/5 flex items-center justify-center">
+                <img
+                  src="/logo.png"
+                  alt="Annual Financial Review Assessment Matrix"
                   className="w-full h-full object-cover grayscale opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
@@ -99,7 +114,7 @@ export default function Contact() {
           {/* Right Side: Secure Contact Interactive Form */}
           <div className="lg:col-span-7" data-aos="fade-left">
             <div className="p-8 md:p-10 rounded-3xl border border-white/5 bg-gradient-to-b from-zinc-900/40 to-zinc-950/80 backdrop-blur-xl shadow-2xl shadow-black">
-              
+
               {isSubmitted ? (
                 <div className="py-16 text-center space-y-4 animate-fade-in">
                   <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/30 rounded-full flex items-center justify-center mx-auto text-emerald-400">
@@ -115,12 +130,12 @@ export default function Contact() {
                   <h3 className="text-xl font-serif font-semibold text-zinc-200 border-b border-white/5 pb-4">
                     Onboarding Registration
                   </h3>
-                  
+
                   {/* Name field */}
                   <div className="space-y-2">
                     <label className="text-xs uppercase font-mono tracking-wider text-zinc-400">Full Name</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       required
                       placeholder="e.g., Rohan Sharma"
                       value={formState.name}
@@ -133,8 +148,8 @@ export default function Contact() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs uppercase font-mono tracking-wider text-zinc-400">Email Address</label>
-                      <input 
-                        type="email" 
+                      <input
+                        type="email"
                         required
                         placeholder="name@domain.com"
                         value={formState.email}
@@ -144,8 +159,8 @@ export default function Contact() {
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs uppercase font-mono tracking-wider text-zinc-400">Contact Number</label>
-                      <input 
-                        type="tel" 
+                      <input
+                        type="tel"
                         required
                         placeholder="+1 or +91..."
                         value={formState.phone}
@@ -162,22 +177,20 @@ export default function Contact() {
                       <button
                         type="button"
                         onClick={() => setFormState({ ...formState, clientType: "nri" })}
-                        className={`py-3 px-4 rounded-xl text-xs font-mono uppercase tracking-wider border transition-all ${
-                          formState.clientType === "nri" 
-                            ? "border-emerald-500/40 bg-emerald-500/5 text-emerald-400 font-bold" 
+                        className={`py-3 px-4 rounded-xl text-xs font-mono uppercase tracking-wider border transition-all ${formState.clientType === "nri"
+                            ? "border-emerald-500/40 bg-emerald-500/5 text-emerald-400 font-bold"
                             : "border-white/5 bg-zinc-950 text-zinc-500 hover:text-zinc-300"
-                        }`}
+                          }`}
                       >
                         Non-Resident (NRI)
                       </button>
                       <button
                         type="button"
                         onClick={() => setFormState({ ...formState, clientType: "domestic" })}
-                        className={`py-3 px-4 rounded-xl text-xs font-mono uppercase tracking-wider border transition-all ${
-                          formState.clientType === "domestic" 
-                            ? "border-emerald-500/40 bg-emerald-500/5 text-emerald-400 font-bold" 
+                        className={`py-3 px-4 rounded-xl text-xs font-mono uppercase tracking-wider border transition-all ${formState.clientType === "domestic"
+                            ? "border-emerald-500/40 bg-emerald-500/5 text-emerald-400 font-bold"
                             : "border-white/5 bg-zinc-950 text-zinc-500 hover:text-zinc-300"
-                        }`}
+                          }`}
                       >
                         Domestic Indian
                       </button>
@@ -187,19 +200,38 @@ export default function Contact() {
                   {/* Brief Message */}
                   <div className="space-y-2">
                     <label className="text-xs uppercase font-mono tracking-wider text-zinc-400">Primary Financial Objective</label>
-                    <textarea 
-                      rows="4"
-                      placeholder="Specify goals (e.g., Global Tax Efficiency, Systematic Capital Deployment, MFund validation...)"
+                    <textarea
+                      rows="3"
+                      placeholder="Specify goals (e.g., Global Tax Efficiency, Systematic Capital Deployment...)"
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                       className="w-full bg-zinc-950 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-zinc-200 placeholder-zinc-700 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all font-light resize-none"
                     />
                   </div>
 
+                  {/* Minimum Budget Qualification Filter Hook */}
+                  <div className="p-4 rounded-xl border border-amber-500/10 bg-amber-500/5 flex items-start gap-3">
+                    <input
+                      id="min-investment-verify"
+                      type="checkbox"
+                      required
+                      checked={minInvestConfirmed}
+                      onChange={(e) => setMinInvestConfirmed(e.target.checked)}
+                      className="mt-1 h-4 w-4 rounded border-zinc-800 bg-zinc-950 text-emerald-500 accent-emerald-500 focus:ring-0 focus:ring-offset-0 cursor-pointer"
+                    />
+                    <label htmlFor="min-investment-verify" className="text-xs text-zinc-400 leading-relaxed cursor-pointer select-none">
+                      I confirm that I am willing and able to allocate a <strong className="text-amber-400 font-semibold">minimum investment of 10K</strong> for deployment. I understand submissions below this threshold will not be processed.
+                    </label>
+                  </div>
+
                   {/* Submit Button */}
-                  <button 
-                    type="submit" 
-                    className="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-zinc-950 font-bold text-sm tracking-wide shadow-xl shadow-emerald-950/20 transition flex items-center justify-center gap-2 group active:scale-[0.99]"
+                  <button
+                    type="submit"
+                    disabled={!minInvestConfirmed}
+                    className={`w-full py-4 rounded-xl font-bold text-sm tracking-wide shadow-xl transition flex items-center justify-center gap-2 group active:scale-[0.99] ${minInvestConfirmed
+                        ? "bg-emerald-600 hover:bg-emerald-500 text-zinc-950 cursor-pointer shadow-emerald-950/20"
+                        : "bg-zinc-800 text-zinc-500 cursor-not-allowed opacity-50"
+                      }`}
                   >
                     Submit Encrypted Request
                     <Send className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

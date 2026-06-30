@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { Calendar as CalendarIcon, Clock, MessageSquare, ShieldCheck, ArrowRight } from "lucide-react";
+import { Calendar as CalendarIcon, Clock, MessageSquare, ShieldCheck, ArrowRight, User } from "lucide-react";
 
 export default function Booking() {
+    const [name, setName] = useState("");
     const [selectedDate, setSelectedDate] = useState("");
     const [selectedTime, setSelectedTime] = useState("");
     const [sessionType, setSessionType] = useState("Full Advisory Intro");
+    const [minInvestConfirmed, setMinInvestConfirmed] = useState(false);
 
     // Premium, predefined time slots optimized for cross-border/domestic time zones
     const timeSlots = [
@@ -16,17 +18,27 @@ export default function Booking() {
     ];
 
     const handleWhatsAppRedirect = () => {
+        if (!name.trim()) {
+            alert("Please input your name to register the consultation.");
+            return;
+        }
         if (!selectedDate || !selectedTime) {
             alert("Please select a convenient date and time slot first.");
             return;
         }
+        if (!minInvestConfirmed) {
+            alert("Please acknowledge the minimum investment criteria to proceed.");
+            return;
+        }
 
-        const phoneNumber = "919847729426"; // Replace with your verified company phone number
+        const phoneNumber = "919847729426"; // Verified company phone number
         const message = `Hello Akash S, I would like to book a strategic Consultation slot.
     
+• Investor Name: ${name}
 • Session Type: ${sessionType}
 • Preferred Date: ${selectedDate}
 • Preferred Time: ${selectedTime}
+• Minimum 10K Allocation Confirmed: Yes
 
 Please confirm availability for our core clarity session. Thank you.`;
 
@@ -61,7 +73,7 @@ Please confirm availability for our core clarity session. Thank you.`;
                         Secure Your Priority Session
                     </h2>
                     <p className="mt-4 text-zinc-400 text-base md:text-lg font-light max-w-xl mx-auto">
-                        Select your preferred consultation window below. Your request will instantly format into an encrypted handoff straight to our WhatsApp desk.
+                        Select your preferred consultation window below. Please note that advisory services require a <span className="text-amber-400 font-medium">minimum investment of 10K</span> to deploy.
                     </p>
                 </div>
 
@@ -70,12 +82,27 @@ Please confirm availability for our core clarity session. Thank you.`;
 
                     {/* Form / Inputs Panel */}
                     <div
-                        className="md:col-span-7 p-8 rounded-3xl border border-white/5 bg-zinc-900/20 backdrop-blur-xl flex flex-col justify-between space-y-6"
+                        className="md:col-span-7 p-8 rounded-3xl border border-white/5 bg-zinc-900/20 backdrop-blur-xl flex flex-col space-y-6"
                         data-aos="fade-right"
                     >
+                        {/* Step 0: Name Field */}
+                        <div className="space-y-2">
+                            <label className="text-xs uppercase font-mono tracking-wider text-zinc-500 block flex items-center gap-2">
+                                <User className="w-3.5 h-3.5 text-emerald-400" /> 01. Your Name
+                            </label>
+                            <input
+                                type="text"
+                                required
+                                placeholder="e.g., Rohan Sharma"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                className="w-full bg-zinc-950 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-zinc-200 placeholder-zinc-700 focus:outline-none focus:border-emerald-500/50 transition-all font-light"
+                            />
+                        </div>
+
                         {/* Step 1: Strategy Focus Selection */}
                         <div className="space-y-2">
-                            <label className="text-xs uppercase font-mono tracking-wider text-zinc-500 block">01. Choose Focus Model</label>
+                            <label className="text-xs uppercase font-mono tracking-wider text-zinc-500 block">02. Choose Focus Model</label>
                             <select
                                 value={sessionType}
                                 onChange={(e) => setSessionType(e.target.value)}
@@ -91,7 +118,7 @@ Please confirm availability for our core clarity session. Thank you.`;
                         {/* Step 2: Custom Native Date Picker */}
                         <div className="space-y-2">
                             <label className="text-xs uppercase font-mono tracking-wider text-zinc-500 block flex items-center gap-2">
-                                <CalendarIcon className="w-3.5 h-3.5 text-emerald-400" /> 02. Select Available Date
+                                <CalendarIcon className="w-3.5 h-3.5 text-emerald-400" /> 03. Select Available Date
                             </label>
                             <input
                                 type="date"
@@ -105,7 +132,7 @@ Please confirm availability for our core clarity session. Thank you.`;
                         {/* Step 3: Interactive Time Segment Chips */}
                         <div className="space-y-3">
                             <label className="text-xs uppercase font-mono tracking-wider text-zinc-500 block flex items-center gap-2">
-                                <Clock className="w-3.5 h-3.5 text-emerald-400" /> 03. Pick Time Slot
+                                <Clock className="w-3.5 h-3.5 text-emerald-400" /> 04. Pick Time Slot
                             </label>
                             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                                 {timeSlots.map((time, idx) => (
@@ -142,6 +169,11 @@ Please confirm availability for our core clarity session. Thank you.`;
                                 <p className="text-xs text-zinc-500 uppercase font-mono tracking-wider">Appointment Overview</p>
 
                                 <div>
+                                    <span className="text-xs text-zinc-500 block">Client Identifier:</span>
+                                    <span className="text-sm text-zinc-200 font-medium truncate block">{name || "Awaiting entry"}</span>
+                                </div>
+
+                                <div>
                                     <span className="text-xs text-zinc-500 block">Framework Type:</span>
                                     <span className="text-sm text-zinc-200 font-medium">{sessionType}</span>
                                 </div>
@@ -160,14 +192,34 @@ Please confirm availability for our core clarity session. Thank you.`;
                                     </span>
                                 </div>
                             </div>
+
+                            {/* Minimum Gatekeeper Gate Selection Hook */}
+                            <div className="p-4 rounded-xl border border-amber-500/10 bg-amber-500/5 flex items-start gap-3">
+                                <input
+                                    id="book-investment-verify"
+                                    type="checkbox"
+                                    required
+                                    checked={minInvestConfirmed}
+                                    onChange={(e) => setMinInvestConfirmed(e.target.checked)}
+                                    className="mt-1 h-4 w-4 rounded border-zinc-800 bg-zinc-950 text-emerald-500 accent-emerald-500 focus:ring-0 focus:ring-offset-0 cursor-pointer"
+                                />
+                                <label htmlFor="book-investment-verify" className="text-xs text-zinc-400 leading-relaxed cursor-pointer select-none">
+                                    I certify that I intend to deploy a <strong className="text-amber-400 font-semibold">minimum investment of 10K</strong>. Non-qualifying entries will be skipped.
+                                </label>
+                            </div>
                         </div>
 
                         <div className="mt-8">
                             <button
                                 onClick={handleWhatsAppRedirect}
-                                className="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-zinc-950 font-bold text-sm tracking-wide shadow-xl shadow-emerald-950/20 flex items-center justify-center gap-2 group transition active:scale-[0.99]"
+                                disabled={!minInvestConfirmed || !name.trim() || !selectedDate || !selectedTime}
+                                className={`w-full py-4 rounded-xl font-bold text-sm tracking-wide shadow-xl flex items-center justify-center gap-2 group transition active:scale-[0.99] ${
+                                    minInvestConfirmed && name.trim() && selectedDate && selectedTime
+                                        ? "bg-emerald-600 hover:bg-emerald-500 text-zinc-950 cursor-pointer shadow-emerald-950/20"
+                                        : "bg-zinc-800 text-zinc-500 cursor-not-allowed opacity-50"
+                                }`}
                             >
-                                <MessageSquare className="w-4 h-4 fill-zinc-950" />
+                                <MessageSquare className="w-4 h-4 fill-current" />
                                 Confirm via WhatsApp
                                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                             </button>

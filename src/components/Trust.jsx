@@ -40,7 +40,7 @@ export default function Trust() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[450px] w-[800px] rounded-full bg-emerald-500/[0.03] blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 py-28 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto">
           <span className="inline-block mb-4 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-sm font-medium text-emerald-400">
@@ -55,7 +55,7 @@ export default function Trust() {
           </h2>
 
           <p className="mt-6 text-base md:text-lg text-zinc-400 leading-relaxed">
-            Delivering financial planning, investment guidance, tax optimization, and business advisory solutions tailored to long-term success.
+            Empowering individuals and businesses with strategic financial planning, investment solutions, health insurance, and tax optimization to build, protect, and grow long-term wealth.
           </p>
         </div>
 
@@ -64,25 +64,22 @@ export default function Trust() {
           {stats.map((item, index) => (
             <div
               key={index}
-              className={`flex flex-col items-center text-center p-10 group hover:bg-white/[0.02] transition-colors duration-300 ${
-                index !== stats.length - 1
+              className={`flex flex-col items-center text-center p-10 group hover:bg-white/[0.02] transition-colors duration-300 ${index !== stats.length - 1
                   ? "border-b lg:border-b-0 lg:border-r border-white/5"
                   : ""
-              }`}
+                }`}
             >
               {/* Icon Container */}
-              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:-translate-y-1 ${
-                item.isPrimary 
-                  ? "bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-500/20" 
+              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:-translate-y-1 ${item.isPrimary
+                  ? "bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-500/20"
                   : "bg-zinc-900 border border-white/10 text-zinc-300 group-hover:text-amber-400 group-hover:border-amber-400/30"
-              }`}>
+                }`}>
                 <img src={item.icon} alt={`${item.value} Icon`} className="w-12 h-12" />
               </div>
 
               {/* Metric Figure */}
-              <h3 className={`text-4xl font-extrabold tracking-tight ${
-                item.isPrimary ? "text-emerald-400" : "text-white"
-              }`}>
+              <h3 className={`text-4xl font-extrabold tracking-tight ${item.isPrimary ? "text-emerald-400" : "text-white"
+                }`}>
                 {item.value}
               </h3>
 

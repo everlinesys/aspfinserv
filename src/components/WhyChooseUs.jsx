@@ -11,7 +11,7 @@ export default function WhyChooseUs() {
   const reasons = [
     {
       icon: ShieldCheck,
-      title: "Trusted Advisory",
+      title: "Trusted Finance Planner",
       desc: "Completely transparent, conflict-free financial guidance tailored explicitly to your targets.",
     },
     {
@@ -19,16 +19,8 @@ export default function WhyChooseUs() {
       title: "Growth Focused",
       desc: "Data-driven strategies engineered intentionally to compound generational wealth.",
     },
-    {
-      icon: Landmark,
-      title: "Tax Expertise",
-      desc: "Meticulous structural tax optimization blueprints that guarantee compliance efficiency.",
-    },
-    {
-      icon: Briefcase,
-      title: "Business Consulting",
-      desc: "Robust institutional-grade financial scaling models built for fast-moving corporate teams.",
-    },
+
+    
     {
       icon: Users,
       title: "Client First",
@@ -61,7 +53,7 @@ export default function WhyChooseUs() {
         </h2>
 
         <p className="mt-6 text-zinc-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
-          Helping individuals and regional companies make highly calculated, smarter financial choices through institutional knowledge and long-term planning.
+          Helping individuals make highly calculated, smarter financial choices through institutional knowledge and long-term planning.
         </p>
       </div>
 
