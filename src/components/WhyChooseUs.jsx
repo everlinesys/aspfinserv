@@ -5,6 +5,7 @@ import {
   Briefcase,
   Users,
   BadgeCheck,
+  HeartPulse
 } from "lucide-react";
 
 export default function WhyChooseUs() {
@@ -19,8 +20,11 @@ export default function WhyChooseUs() {
       title: "Growth Focused",
       desc: "Data-driven strategies engineered intentionally to compound generational wealth.",
     },
-
-    
+    {
+      icon: HeartPulse, // Make sure to import HeartPulse or Activity from 'lucide-react'
+      title: "Health & Risk Shielding",
+      desc: "Bespoke corporate and individual health insurance mapping to insulate your wealth from medical contingencies.",
+    },
     {
       icon: Users,
       title: "Client First",
@@ -38,7 +42,7 @@ export default function WhyChooseUs() {
 
   return (
     <section className="bg-zinc-950 py-28 overflow-hidden border-t border-white/5 relative">
-      
+
       {/* Section Typography Intro */}
       <div className="max-w-7xl mx-auto px-6 mb-20 text-center relative z-10">
         <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium">

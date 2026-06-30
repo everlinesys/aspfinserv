@@ -21,6 +21,8 @@ export default function MutualFundPartners() {
   ];
 
   const row2Logos = [
+     { name: "Ergo", src: "/icons/ergo.png" },
+    { name: "ABC", src: "/icons/abc.png" },
     { name: "Helios", src: "/icons/Helios.png" },
     { name: "HSBC", src: "/icons/HSBC.png" },
     { name: "ICICI", src: "/icons/ICICI.png" },
