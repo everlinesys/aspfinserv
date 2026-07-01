@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import Reviews from '../components/Reviews';
 import Process from '../components/Process';
 import MutualFundPartners from '../components/MutualFundPartners';
+import HealthInsurancePartners from '../components/HealthInsurancePartners';
 
 // Inside your main App component:
 
@@ -30,6 +31,7 @@ export default function Home() {
       <Trust />
       <Reviews />
       <MutualFundPartners />
+      <HealthInsurancePartners />
       <Process />
       <MissionVision />
       <WhyChooseUs />

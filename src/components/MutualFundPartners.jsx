@@ -21,8 +21,7 @@ export default function MutualFundPartners() {
   ];
 
   const row2Logos = [
-     { name: "Ergo", src: "/icons/ergo.png" },
-    { name: "ABC", src: "/icons/abc.png" },
+
     { name: "Helios", src: "/icons/Helios.png" },
     { name: "HSBC", src: "/icons/HSBC.png" },
     { name: "ICICI", src: "/icons/ICICI.png" },
@@ -155,11 +154,11 @@ export default function MutualFundPartners() {
   return (
     <section className="bg-zinc-950 text-white py-16 border-t border-white/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-12 ">
           <span className="inline-block mb-3 rounded-full border border-zinc-800 bg-zinc-900/50 px-4 py-1 text-xs font-mono font-medium text-zinc-400 tracking-wider ">
-            Associated with 42+ Mutual Funds & Health Insurance Providers
+            Associated with 42+ Mutual Funds
           </span>
           <h2 className="text-2xl md:text-3xl font-sans font-bold tracking-tight text-zinc-100">
             Institutional Asset Ecosystem

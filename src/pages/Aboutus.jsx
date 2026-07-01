@@ -103,7 +103,7 @@ export default function AboutUs() {
                                 {/* Profile Image Wrapper */}
                                 <div className="relative h-80 w-full overflow-hidden rounded-2xl bg-zinc-950">
                                    <img
-                                        src="/founder.jpeg"
+                                        src="/founder2.jpg"
                                         alt="Akash S - Founder & Lead Advisor"
                                         className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                                     />

@@ -106,7 +106,7 @@ export default function Hero() {
               {/* Founder Profile Container */}
               <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 shadow-xl">
                 <img
-                  src="/founder2.jpg"
+                  src="/founder.jpeg"
                   alt="Founder"
                   className="w-full h-[320px] md:h-[450px] object-cover object-top"
                 />
