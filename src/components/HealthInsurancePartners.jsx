@@ -27,7 +27,7 @@ export default function HealthInsurancePartners() {
                 {/* Header Section */}
                 <div className="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
                     <span className="inline-block mb-4 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-sm font-medium text-emerald-400">
-                        Premium Risk Mitigation
+                        Health Insurance Partners
                     </span>
                     <h2 className="text-3xl md:text-4xl font-serif font-bold tracking-tight text-zinc-100">
                         Health Insurance Execution Ecosystem
@@ -37,10 +37,10 @@ export default function HealthInsurancePartners() {
                     </p>
 
                     {/* Institutional Gatekeeper Notice */}
-                    <div className="inline-flex items-center gap-2 mt-5 p-2 px-4 rounded-full border border-amber-500/10 bg-amber-500/5 text-amber-400/90 text-xs font-mono">
+                    {/* <div className="inline-flex items-center gap-2 mt-5 p-2 px-4 rounded-full border border-amber-500/10 bg-amber-500/5 text-amber-400/90 text-xs font-mono">
                         <ShieldAlert size={14} className="text-amber-400" />
                         Advisory & execution restricted to portfolios with a 10K minimum investment setup.
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Structured 3-Column Display */}

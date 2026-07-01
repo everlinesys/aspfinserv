@@ -108,7 +108,7 @@ export default function MockChart() {
 
   return (
     <div className="w-full max-w-4xl mx-auto p-6 md:p-8 bg-zinc-950 text-white rounded-[32px] border border-white/10 shadow-2xl backdrop-blur-xl">
-
+     
       {/* Premium Top Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-white/5 pb-6 mb-8 gap-4">
         <div>
@@ -215,7 +215,7 @@ export default function MockChart() {
       <div className="mt-8 pt-6 border-t border-white/5">
         <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-500 block mb-4">// Opportunity Cost Benchmarks</span>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          
+
           {/* Gold Alternative Container */}
           <div className="flex items-center justify-between p-4 rounded-xl border border-white/5 bg-zinc-900/10">
             <div className="flex items-center gap-3">
@@ -272,6 +272,7 @@ export default function MockChart() {
           <div className="text-lg font-medium text-white">{formatCurrency(estimatedWealth)}</div>
         </div>
       </div>
+
 
       {/* Call To Action Button */}
       <button
