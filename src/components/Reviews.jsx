@@ -96,7 +96,7 @@ export default function Reviews() {
                     What Our <span className="bg-gradient-to-r from-emerald-400 to-amber-300 bg-clip-text text-transparent">Investors Say</span>
                 </h2>
                 <p className="mt-4 text-zinc-400 max-w-xl mx-auto text-base">
-                    Real reviews pulled from our Google Business profile. Rated 5/5 stars by over 25000+ community members.
+                    Real reviews pulled from our Google Business profile. Rated 5/5 stars by over truster clients.
                 </p>
             </div>
 
