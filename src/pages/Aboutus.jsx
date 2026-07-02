@@ -15,7 +15,7 @@ export default function AboutUs() {
         },
         {
             icon: Users,
-            title: "Massive Insya Community",
+            title: "Massive Learning Community",
             description: "A trusted network of thousands of investors sharing insight, transparency, and collaborative value.",
         },
         {

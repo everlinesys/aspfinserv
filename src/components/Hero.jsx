@@ -139,7 +139,7 @@ export default function Hero() {
         </div>
       </div>
       <p className="mt-4 p-6 text-zinc-400 text-sm md:text-base font-light max-w-xl mx-auto leading-relaxed">
-        Please note: We are currently onboarding select clients who can allocate a <span className="text-amber-400 font-medium">minimum of 10K per month as a SIP</span> (Systematic Investment Plan) to initiate their custom deployment.
+        Please note: We are currently onboarding selected clients who can allocate a <span className="text-amber-400 font-medium">minimum of 10K per month as a SIP</span> (Systematic Investment Plan) to initiate their custom deployment.
       </p>
       <MockChart />
 

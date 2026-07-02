@@ -1,44 +1,43 @@
 import React from "react";
 import { 
-  TrendingUp, 
   Layers, 
-  Coins, 
-  Percent, 
+  TrendingUp, 
+  ShieldAlert, 
+  HeartPulse, 
   ArrowRight 
 } from "lucide-react";
-
 export default function InvestmentPlans() {
   const assetTypes = [
     {
       icon: Layers,
-      title: "Mutual Funds (MFs)",
-      subtitle: "Diversified Asset Vehicles",
-      description: "Pools capital from thousands of investors to buy a managed basket of equities or debt securities. Perfect for long-term systematic wealth compounding.",
-      tags: ["Equity", "Debt", "Hybrid"],
+      title: "Mutual Funds",
+      subtitle: "Smart Diversification",
+      description: "Your money is pooled with other investors to buy a balanced mix of top company stocks or safe bonds. Managed by experts, it is perfect for growing your savings steadily over time.",
+      tags: ["Easy Growth", "Expert Managed"],
       accent: "from-emerald-500/20 via-transparent"
     },
     {
-      icon: Coins,
-      title: "Recurring Deposits (RD)",
-      subtitle: "Systematic Capital Security",
-      description: "A disciplined banking framework where you invest a fixed sum month-on-month, securing guaranteed interest yield rates completely decoupled from market volatility.",
-      tags: ["Guaranteed Return", "Risk-Free"],
+      icon: TrendingUp,
+      title: "Long-Term & Retirement Planning",
+      subtitle: "Secure Your Future",
+      description: "A customized mix of investments chosen to fund your life goals, buy a home, or support a stress-free retirement. Built to ensure you never run out of money when you stop working.",
+      tags: ["Future Wealth", "Retirement Security"],
       accent: "from-amber-500/20 via-transparent"
     },
     {
-      icon: TrendingUp,
-      title: "Direct Equities",
-      subtitle: "High-Alpha Ownership",
-      description: "Purchasing fractional shares of publicly listed corporations directly. Offers premium long-term compounding potential, paired with higher baseline structural volatility.",
-      tags: ["High Growth", "Market Linked"],
+      icon: HeartPulse,
+      title: "Health Insurance",
+      subtitle: "Medical & Family Protection",
+      description: "Protects your hard-earned wealth from unexpected medical bills and hospital fees. Ensures your family gets top-tier healthcare without breaking your bank account.",
+      tags: ["Emergency Shield", "Family Safety"],
       accent: "from-teal-500/20 via-transparent"
     },
     {
-      icon: Percent,
-      title: "Fixed Income & Bonds",
-      subtitle: "Predictable Cash Flow",
-      description: "Lending capital to corporate or government entities in exchange for structured, periodic coupon payments alongside absolute principal protection upon final maturity.",
-      tags: ["Fixed Yield", "Capital Shield"],
+      icon: ShieldAlert,
+      title: "Full Financial Planning",
+      subtitle: "Your Complete Money Blueprint",
+      description: "A clear roadmap covering your monthly savings, safety funds, and tax strategies. We connect all the pieces so you know exactly where your money is going.",
+      tags: ["All-in-One Plan", "Tax Efficient"],
       accent: "from-blue-500/20 via-transparent"
     }
   ];
@@ -53,13 +52,13 @@ export default function InvestmentPlans() {
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
           <span className="inline-block mb-4 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-sm font-medium text-emerald-400">
-            Asset Primers
+            Our Core Services
           </span>
           <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-zinc-100">
-            Demystifying Core Asset Classes
+            Simple Solutions for Your Wealth
           </h2>
           <p className="mt-4 text-zinc-400 text-base md:text-lg font-light max-w-xl mx-auto">
-            Before configuring an allocation blueprint, it is critical to understand the primary instruments used to build sustainable generational wealth.
+            Before we build your plan, it helps to know the main tools we use to protect your health and grow your savings for the long run.
           </p>
         </div>
 
@@ -108,10 +107,11 @@ export default function InvestmentPlans() {
                 </div>
 
                 {/* Card CTA/Footer decoration */}
-                <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500 group-hover:text-emerald-400 transition-colors relative z-10">
-                  <span>Inquire framework suitability</span>
+                <a href="/contact" className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500 group-hover:text-emerald-400 transition-colors relative z-10">
+                 
+                  <span>Ask about this plan</span>
                   <ArrowRight className="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" />
-                </div>
+                </a>
               </div>
             );
           })}

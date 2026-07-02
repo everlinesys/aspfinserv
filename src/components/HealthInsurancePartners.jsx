@@ -87,7 +87,7 @@ export default function HealthInsurancePartners() {
                         }}
                         className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-zinc-400 hover:text-emerald-400 transition-colors group cursor-pointer"
                     >
-                        Structure Your Asset Protection Framework
+                        Enquire about Health Insurance Advisory & Execution
                         <ArrowUpRight size={14} className="text-zinc-500 group-hover:text-emerald-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </button>
                 </div>

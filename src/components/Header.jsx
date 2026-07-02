@@ -75,6 +75,15 @@ export default function Header() {
             {/* <button className="bg-white/5 hover:bg-white/10 text-white text-sm font-medium px-5 py-2.5 rounded-xl border border-white/10 transition">
               Log In
             </button> */}
+            <a href="https://courses.aspfinancialservices.com" target="_blank" rel="noopener noreferrer" className=" text-white font-small py-3 rounded-xl shadow-lg text-center">
+              courses
+            </a>
+            <button onClick={() => {
+              setMobileOpen(false);
+              window.location.href = "https://play.google.com/store/apps/details?id=com.mfcentral.app"
+            }} className=" text-white font-small py-3 rounded-xl shadow-lg text-center">
+              MFCentral App
+            </button>
             <button onClick={() => navigate("/book-consultation")} className="bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium px-6 py-2.5 rounded-xl shadow-lg shadow-emerald-900/20 hover:shadow-emerald-600/20 hover:-translate-y-0.5 transition active:translate-y-0">
               Book Consultation
             </button>
@@ -107,6 +116,15 @@ export default function Header() {
             </a>
           ))}
           <hr className="border-white/10 my-2" />
+          <a href="https://courses.aspfinancialservices.com" target="_blank" rel="noopener noreferrer"  className="bg-yellow-700 text-white font-medium py-3 rounded-xl shadow-lg text-center">
+            Mutual Fund Courses
+          </a>
+          <button onClick={() => {
+            setMobileOpen(false);
+            window.location.href = "https://play.google.com/store/apps/details?id=com.mfcentral.app"
+          }} className="bg-yellow-700 text-white font-medium py-3 rounded-xl shadow-lg text-center">
+            Try MF Central App
+          </button>
           <button onClick={() => {
             setMobileOpen(false);
             navigate("/book-consultation")

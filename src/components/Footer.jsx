@@ -1,4 +1,6 @@
+import {useNavigate} from "react-router-dom";
 export default function Footer() {
+  const navigate = useNavigate();
   return (
     <footer className="bg-zinc-950 text-white border-t border-white/5 relative overflow-hidden">
       {/* Soft Ambient Background Light */}
@@ -69,7 +71,7 @@ export default function Footer() {
               <p className="hover:text-white transition-colors cursor-pointer">info@ASP Financial Services.com</p>
               <p className="hover:text-white transition-colors cursor-pointer">+91 98477 29426</p>
               <p>
-                Kochi, Kerala
+                Kottayam, Kerala, India
                 <span className="block text-xs text-zinc-500 mt-0.5">India</span>
               </p>
             </div>
@@ -88,7 +90,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <button className="whitespace-nowrap bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm px-6 py-3 rounded-xl shadow-lg shadow-emerald-950/20 hover:-translate-y-0.5 transition active:translate-y-0">
+          <button  onClick={() => {navigate("/contact")}} className="whitespace-nowrap bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm px-6 py-3 rounded-xl shadow-lg shadow-emerald-950/20 hover:-translate-y-0.5 transition active:translate-y-0">
             Book Consultation
           </button>
         </div>

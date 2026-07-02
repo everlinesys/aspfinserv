@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import { Mail, Phone, Globe, MessageSquare, Send, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function Contact() {
-  const [formState, setFormState] = useState({ name: "", email: "", phone: "", clientType: "nri", message: "" });
+  const [formState, setFormState] = useState({ 
+    name: "", 
+    email: "", 
+    phone: "", 
+    clientType: "nri", 
+    enquiryType: "investment", // New field added
+    message: "" 
+  });
   const [minInvestConfirmed, setMinInvestConfirmed] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -10,8 +17,28 @@ export default function Contact() {
     e.preventDefault();
     if (!minInvestConfirmed) return;
 
-    // Handle secure form distribution logic here
+    // Determine target WhatsApp number based on Enquiry Type
+    // Investment -> +919847729426 | Insurance -> +919400889426
+    const targetPhone = formState.enquiryType === "insurance" ? "919400889426" : "919847729426";
+    
+    // Construct pre-filled template text
+    const textMessage = `Hello, I would like to submit an enquiry.
+    
+*Type:* ${formState.enquiryType.toUpperCase()}
+*Name:* ${formState.name}
+*Email:* ${formState.email}
+*Phone:* ${formState.phone}
+*Classification:* ${formState.clientType === "nri" ? "Non-Resident (NRI)" : "Domestic Indian"}
+*Objective:* ${formState.message || "N/A"}`;
+
+    // Encode text for the WhatsApp deep-link
+    const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(textMessage)}`;
+
     setIsSubmitted(true);
+    
+    // Open WhatsApp tab
+    window.open(whatsappUrl, "_blank");
+
     setTimeout(() => setIsSubmitted(false), 5000);
   };
 
@@ -60,22 +87,25 @@ export default function Contact() {
                 </div>
               </div>
 
+              {/* Updated to WhatsApp Link */}
               <div className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-zinc-900/20 backdrop-blur-md">
                 <div className="w-10 h-10 rounded-lg bg-zinc-950 border border-white/10 flex items-center justify-center text-emerald-400">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-zinc-500 font-mono">Priority Desk</p>
-                  <a href="tel:+919847729426" className="text-sm md:text-base text-zinc-200 hover:text-emerald-400 font-medium transition-colors">+91 98477 29426</a>
+                  <p className="text-xs text-zinc-500 font-mono">Priority Desk (WhatsApp)</p>
+                  <a href="https://wa.me/919847729426" target="_blank" rel="noopener noreferrer" className="text-sm md:text-base text-zinc-200 hover:text-emerald-400 font-medium transition-colors">+91 98477 29426</a>
                 </div>
               </div>
+
+              {/* Updated to WhatsApp Link */}
               <div className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-zinc-900/20 backdrop-blur-md">
                 <div className="w-10 h-10 rounded-lg bg-zinc-950 border border-white/10 flex items-center justify-center text-emerald-400">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-zinc-500 font-mono">Health Insurance Services</p>
-                  <a href="tel:+919400889426" className="text-sm md:text-base text-zinc-200 hover:text-emerald-400 font-medium transition-colors">+91 94008 89426</a>
+                  <p className="text-xs text-zinc-500 font-mono">Health Insurance Services (WhatsApp)</p>
+                  <a href="https://wa.me/919400889426" target="_blank" rel="noopener noreferrer" className="text-sm md:text-base text-zinc-200 hover:text-emerald-400 font-medium transition-colors">+91 94008 89426</a>
                 </div>
               </div>
 
@@ -122,7 +152,7 @@ export default function Contact() {
                   </div>
                   <h3 className="text-2xl font-serif font-bold text-zinc-100">Consultation Initiated</h3>
                   <p className="text-sm text-zinc-400 max-w-sm mx-auto font-light">
-                    Your preliminary data has been encrypted. Akash S or a senior advisory specialist will reach out to schedule your core clarity session within 24 hours.
+                    Your details have been assembled. We have directed you to WhatsApp to securely lock in your core clarity session.
                   </p>
                 </div>
               ) : (
@@ -130,6 +160,33 @@ export default function Contact() {
                   <h3 className="text-xl font-serif font-semibold text-zinc-200 border-b border-white/5 pb-4">
                     Onboarding Registration
                   </h3>
+
+                  {/* Enquiry Type Toggle Selection */}
+                  <div className="space-y-2">
+                    <label className="text-xs uppercase font-mono tracking-wider text-zinc-400 block mb-2">Enquiry Category</label>
+                    <div className="grid grid-cols-2 gap-4">
+                      <button
+                        type="button"
+                        onClick={() => setFormState({ ...formState, enquiryType: "investment" })}
+                        className={`py-3 px-4 rounded-xl text-xs font-mono uppercase tracking-wider border transition-all ${formState.enquiryType === "investment"
+                            ? "border-emerald-500/40 bg-emerald-500/5 text-emerald-400 font-bold"
+                            : "border-white/5 bg-zinc-950 text-zinc-500 hover:text-zinc-300"
+                          }`}
+                      >
+                        Investment Desk
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setFormState({ ...formState, enquiryType: "insurance" })}
+                        className={`py-3 px-4 rounded-xl text-xs font-mono uppercase tracking-wider border transition-all ${formState.enquiryType === "insurance"
+                            ? "border-emerald-500/40 bg-emerald-500/5 text-emerald-400 font-bold"
+                            : "border-white/5 bg-zinc-950 text-zinc-500 hover:text-zinc-300"
+                          }`}
+                      >
+                        Insurance Desk
+                      </button>
+                    </div>
+                  </div>
 
                   {/* Name field */}
                   <div className="space-y-2">
@@ -233,7 +290,7 @@ export default function Contact() {
                         : "bg-zinc-800 text-zinc-500 cursor-not-allowed opacity-50"
                       }`}
                   >
-                    Submit Encrypted Request
+                    Submit & Forward to WhatsApp
                     <Send className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </button>
 

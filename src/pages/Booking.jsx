@@ -31,8 +31,11 @@ export default function Booking() {
             return;
         }
 
-        const phoneNumber = "919847729426"; // Verified company phone number
-        const message = `Hello Akash S, I would like to book a strategic Consultation slot.
+        // Routing engine: Route specific models dynamically to different desk nodes
+        // If they pick Insurance Evaluation, it routes to Insurance Desk (919400889426). Otherwise, Priority Desk (919847729426).
+        const targetPhoneNumber = sessionType === "Insurance Evaluation & Setup" ? "919400889426" : "919847729426";
+        
+        const message = `Hello, I would like to book a strategic Consultation slot.
     
 • Investor Name: ${name}
 • Session Type: ${sessionType}
@@ -44,7 +47,7 @@ Please confirm availability for our core clarity session. Thank you.`;
 
         // Safe, cross-platform URI encoder for clean browser handoff
         const encodedMessage = encodeURIComponent(message);
-        window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`, "_blank");
+        window.open(`https://api.whatsapp.com/send?phone=${targetPhoneNumber}&text=${encodedMessage}`, "_blank");
     };
 
     // Generate today's date dynamically in YYYY-MM-DD format to disable past dates in the calendar picker
@@ -109,9 +112,8 @@ Please confirm availability for our core clarity session. Thank you.`;
                                 className="w-full bg-zinc-950 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-zinc-300 focus:outline-none focus:border-emerald-500/50 transition-all font-light"
                             >
                                 <option value="Full Advisory Intro">Full Advisory Intro (Financial Planning)</option>
-                                <option value="Annual Financial Checkup">Annual Financial Review (Existing Clients)</option>
-                                <option value="NRI Asset Consultation">NRI Cross-Border Structuring</option>
-                                <option value="MFund Course Validation">MFund Course Enrollment Audit</option>
+                                <option value="Insurance Evaluation & Setup">Health & Life Insurance Advisory</option>
+                                <option value="MFund Course Validation">MFund Course Enrollment</option>
                             </select>
                         </div>
 
