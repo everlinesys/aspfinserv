@@ -62,7 +62,7 @@ export default function Header() {
       </div>
 
       {/* Main Nav */}
-      <div className={`border-b border-white/5 transition-all duration-300 ${scrolled ? "py-3" : "py-5"}`}>
+      <div className={`border-b border-white/5 transition-all duration-300 relative ${scrolled ? "py-3" : "py-5"}`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
           {/* Logo */}
@@ -114,43 +114,43 @@ export default function Header() {
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-      </div>
 
-      {/* Mobile Drawer Slide-out Container */}
-      <div
-        ref={menuRef}
-        className={`lg:hidden fixed top-[88px] right-0 bottom-0 w-72 max-w-[85vw] transform transition-transform duration-300 ease-in-out z-40 border-l border-white/5
-          bg-black ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}
-      >
-        <nav className="flex flex-col p-6 gap-6 text-lg h-full overflow-y-auto">
-          <a href="/" onClick={() => setMobileOpen(false)} className="text-emerald-400 font-medium">Home</a>
-          {["Services", "Investment Plans", "SIP Calculator", "About Us", "Contact"].map((item) => (
-            <a
-              key={item}
-              href={`/${item.toLowerCase().replace(" ", "-")}`}
-              onClick={() => setMobileOpen(false)}
-              className="text-zinc-300 hover:text-white font-medium"
-            >
-              {item}
+        {/* Mobile Drawer Slide-out Container (Fixed Top Alignment via top-full) */}
+        <div
+          ref={menuRef}
+          className={`lg:hidden fixed top-full right-0 h-[calc(100vh-100%)] w-72 max-w-[85vw] transform transition-transform duration-300 ease-in-out z-40 border-l border-white/5
+            bg-black ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}
+        >
+          <nav className="flex flex-col p-6 gap-6 text-lg h-full overflow-y-auto">
+            <a href="/" onClick={() => setMobileOpen(false)} className="text-emerald-400 font-medium">Home</a>
+            {["Services", "Investment Plans", "SIP Calculator", "About Us", "Contact"].map((item) => (
+              <a
+                key={item}
+                href={`/${item.toLowerCase().replace(" ", "-")}`}
+                onClick={() => setMobileOpen(false)}
+                className="text-zinc-300 hover:text-white font-medium"
+              >
+                {item}
+              </a>
+            ))}
+            <hr className="border-white/10 my-2" />
+            <a href="https://courses.aspfinancialservices.com" target="_blank" rel="noopener noreferrer" className="bg-yellow-500 text-neutral-950 font-medium py-3 rounded-xl shadow-lg text-center hover:bg-yellow-400 transition-colors">
+              Mutual Fund Courses
             </a>
-          ))}
-          <hr className="border-white/10 my-2" />
-          <a href="https://courses.aspfinancialservices.com" target="_blank" rel="noopener noreferrer" className="bg-yellow-500 text-neutral-950 font-medium py-3 rounded-xl shadow-lg text-center hover:bg-yellow-400 transition-colors">
-            Mutual Fund Courses
-          </a>
-          <button onClick={() => {
-            setMobileOpen(false);
-            window.location.href = "https://play.google.com/store/apps/details?id=com.mfcentral.app"
-          }} className="bg-yellow-500 text-neutral-950 font-medium py-3 rounded-xl shadow-lg text-center hover:bg-yellow-400 transition-colors">
-            Try MF Central App
-          </button>
-          <button onClick={() => {
-            setMobileOpen(false);
-            navigate("/contact")
-          }} className="bg-emerald-600 text-white font-medium py-3 rounded-xl shadow-lg text-center hover:bg-emerald-500 transition-colors">
-            Book Consultation
-          </button>
-        </nav>
+            <button onClick={() => {
+              setMobileOpen(false);
+              window.location.href = "https://play.google.com/store/apps/details?id=com.mfcentral.app"
+            }} className="bg-yellow-500 text-neutral-950 font-medium py-3 rounded-xl shadow-lg text-center hover:bg-yellow-400 transition-colors">
+              Try MF Central App
+            </button>
+            <button onClick={() => {
+              setMobileOpen(false);
+              navigate("/contact")
+            }} className="bg-emerald-600 text-white font-medium py-3 rounded-xl shadow-lg text-center hover:bg-emerald-500 transition-colors">
+              Book Consultation
+            </button>
+          </nav>
+        </div>
       </div>
     </header>
   );
