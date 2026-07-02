@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { Mail, Phone, Globe, MessageSquare, Send, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function Contact() {
-  const [formState, setFormState] = useState({ 
-    name: "", 
-    email: "", 
-    phone: "", 
-    clientType: "nri", 
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    clientType: "nri",
     enquiryType: "investment", // New field added
-    message: "" 
+    message: ""
   });
   const [minInvestConfirmed, setMinInvestConfirmed] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -20,7 +20,7 @@ export default function Contact() {
     // Determine target WhatsApp number based on Enquiry Type
     // Investment -> +919847729426 | Insurance -> +919400889426
     const targetPhone = formState.enquiryType === "insurance" ? "919400889426" : "919847729426";
-    
+
     // Construct pre-filled template text
     const textMessage = `Hello, I would like to submit an enquiry.
     
@@ -35,7 +35,7 @@ export default function Contact() {
     const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(textMessage)}`;
 
     setIsSubmitted(true);
-    
+
     // Open WhatsApp tab
     window.open(whatsappUrl, "_blank");
 
@@ -60,10 +60,11 @@ export default function Contact() {
           </h2>
           <p className="mt-4 text-zinc-400 text-lg font-light leading-relaxed">
             Whether you are local or overseas, let's map out your assets with structural clarity.
-            <span className="block mt-2 text-amber-400/90 font-medium text-base flex items-center gap-2">
-              <AlertCircle size={18} className="shrink-0" />
-              Please note: We only initiate advisory setups for clients willing to invest a minimum of 10K.
-            </span>
+            <br />
+
+          </p>
+          <p className="mt-4  text-zinc-400 text-sm md:text-base font-light  mx-auto leading-relaxed">
+            Please note: We are currently onboarding selected clients who can allocate a <span className="text-amber-400 font-medium">minimum of 10K per month as a SIP</span> (Systematic Investment Plan) to initiate their custom deployment.
           </p>
         </div>
 
@@ -169,8 +170,8 @@ export default function Contact() {
                         type="button"
                         onClick={() => setFormState({ ...formState, enquiryType: "investment" })}
                         className={`py-3 px-4 rounded-xl text-xs font-mono uppercase tracking-wider border transition-all ${formState.enquiryType === "investment"
-                            ? "border-emerald-500/40 bg-emerald-500/5 text-emerald-400 font-bold"
-                            : "border-white/5 bg-zinc-950 text-zinc-500 hover:text-zinc-300"
+                          ? "border-emerald-500/40 bg-emerald-500/5 text-emerald-400 font-bold"
+                          : "border-white/5 bg-zinc-950 text-zinc-500 hover:text-zinc-300"
                           }`}
                       >
                         Investment Desk
@@ -179,8 +180,8 @@ export default function Contact() {
                         type="button"
                         onClick={() => setFormState({ ...formState, enquiryType: "insurance" })}
                         className={`py-3 px-4 rounded-xl text-xs font-mono uppercase tracking-wider border transition-all ${formState.enquiryType === "insurance"
-                            ? "border-emerald-500/40 bg-emerald-500/5 text-emerald-400 font-bold"
-                            : "border-white/5 bg-zinc-950 text-zinc-500 hover:text-zinc-300"
+                          ? "border-emerald-500/40 bg-emerald-500/5 text-emerald-400 font-bold"
+                          : "border-white/5 bg-zinc-950 text-zinc-500 hover:text-zinc-300"
                           }`}
                       >
                         Insurance Desk
@@ -235,8 +236,8 @@ export default function Contact() {
                         type="button"
                         onClick={() => setFormState({ ...formState, clientType: "nri" })}
                         className={`py-3 px-4 rounded-xl text-xs font-mono uppercase tracking-wider border transition-all ${formState.clientType === "nri"
-                            ? "border-emerald-500/40 bg-emerald-500/5 text-emerald-400 font-bold"
-                            : "border-white/5 bg-zinc-950 text-zinc-500 hover:text-zinc-300"
+                          ? "border-emerald-500/40 bg-emerald-500/5 text-emerald-400 font-bold"
+                          : "border-white/5 bg-zinc-950 text-zinc-500 hover:text-zinc-300"
                           }`}
                       >
                         Non-Resident (NRI)
@@ -245,8 +246,8 @@ export default function Contact() {
                         type="button"
                         onClick={() => setFormState({ ...formState, clientType: "domestic" })}
                         className={`py-3 px-4 rounded-xl text-xs font-mono uppercase tracking-wider border transition-all ${formState.clientType === "domestic"
-                            ? "border-emerald-500/40 bg-emerald-500/5 text-emerald-400 font-bold"
-                            : "border-white/5 bg-zinc-950 text-zinc-500 hover:text-zinc-300"
+                          ? "border-emerald-500/40 bg-emerald-500/5 text-emerald-400 font-bold"
+                          : "border-white/5 bg-zinc-950 text-zinc-500 hover:text-zinc-300"
                           }`}
                       >
                         Domestic Indian
@@ -286,8 +287,8 @@ export default function Contact() {
                     type="submit"
                     disabled={!minInvestConfirmed}
                     className={`w-full py-4 rounded-xl font-bold text-sm tracking-wide shadow-xl transition flex items-center justify-center gap-2 group active:scale-[0.99] ${minInvestConfirmed
-                        ? "bg-emerald-600 hover:bg-emerald-500 text-zinc-950 cursor-pointer shadow-emerald-950/20"
-                        : "bg-zinc-800 text-zinc-500 cursor-not-allowed opacity-50"
+                      ? "bg-emerald-600 hover:bg-emerald-500 text-zinc-950 cursor-pointer shadow-emerald-950/20"
+                      : "bg-zinc-800 text-zinc-500 cursor-not-allowed opacity-50"
                       }`}
                   >
                     Submit & Forward to WhatsApp

@@ -33,7 +33,7 @@ export default function CTA() {
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <button
                 className="group bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-medium px-8 py-4 rounded-2xl flex items-center gap-2 shadow-xl shadow-emerald-950/50 hover:-translate-y-0.5 transition active:translate-y-0"
-                onClick={() => navigate('/book-consultation')}
+                onClick={() => navigate('/contact')}
               >
                 Schedule Consultation
                 <ArrowRight
